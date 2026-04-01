@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesha e Fjalës – Analizë veprash letrare</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      color: #f5d9a6;
+        background:
+          linear-gradient(rgba(91, 76, 49, 0.578), rgba(91, 76, 49, 0.578)),
+          url("WhatsApp\ Image\ 2026-04-01\ at\ 10.47.41\ PM.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 64px;
+      border-bottom: 1px solid rgba(255, 200, 140, 0.25);
+    }
+
+    .logo {
+      font-family: Cinzel, serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e8c98b;
+      font-size: 15px;
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* ===== PAGE CONTENT ===== */
+    .analysis-page {
+      padding: 80px 64px 120px;
+    }
+
+    .analysis-header {
+      max-width: 720px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+
+    .analysis-header h1 {
+      font-family: Cinzel, serif;
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .analysis-header p {
+      font-size: 17px;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    /* ===== GRID ===== */
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 32px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* ===== CARD ===== */
+    .analysis-card {
+      background:linear-gradient(135deg,#b5651d,#f68c2f);
+      border: 1px solid rgba(255, 190, 120, 0.3);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+    }
+
+    .analysis-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 190, 120, 0.6);
+    }
+
+    .analysis-card h3 {
+      font-family: Cinzel, serif;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .analysis-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    .analysis-card span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #f2c87c;
+    }
+
+    .full-analysis {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .analysis-card.expanded .full-analysis {
+      max-height: 650px;
+      opacity: 1;
+    }
+
+    .read-more {
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+
+    @media (max-width: 1024px) {
+  .analysis-page {
+    padding: 60px 32px 100px;
+  }
+
+  header {
+    padding: 18px 30px;
+  }
+
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .analysis-page {
+    padding: 50px 20px 90px;
+  }
+
+  .analysis-header h1 {
+    font-size: 40px;
+  }
+
+  .analysis-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .analysis-header h1 {
+    font-size: 32px;
+  }
+
+  .analysis-header p {
+    font-size: 15px;
+  }
+
+  .analysis-card h3 {
+    font-size: 18px;
+  }
+
+  .analysis-card p {
+    font-size: 14px;
+  }
+
+  .analysis-card {
+    padding: 18px;
+  }
+
+  .read-more {
+    font-size: 13px;
+  }
+}
+
+.analysis-card.expanded {
+  border-color: rgba(255, 200, 140, 0.8);
+}
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">📖 Pesha e Fjalës</div>
+    <nav>
+    <a href="index.html">Kryefaqja</a>
+    <a href="alv.html">Analizë veprash letrare</a>
+    <a href="rstk.html">Multimedia</a>
+    <a href="njtprgj.html">Produkti</a>
+    </nav>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <section class="analysis-page">
+
+    <div class="analysis-header">
+      <h1>Analizë veprash letrare</h1>
+      <p>
+        Analiza të strukturuara dhe të qarta për veprat kryesore të letërsisë
+        shqiptare dhe botërore, të përshtatshme për nxënës dhe studentë.
+      </p>
+    </div>
+
+    <div class="analysis-grid">
+
+      <div class="analysis-card">
+        <h3>SHPELLA E PIRATËVE  ->  PETRO MARKO</h3>
+
+        <p class="preview">
+                      Libri “Shpella e piratëve” është një roman aventuror për fëmijë dhe të rinj nga autori i njohur shqiptar Petro Marko, i botuar për herë të parë në vitin 1964. Ngjarja zhvillohet përmes aventurave të pesë fëmijëve të mahnitur nga historia e shpellës së piratëve, të cilët përballen me sfida, zbulime dhe situata të panjohura. Libri ndërthur elemente fantastike dhe realiste, duke nxitur kureshtjen, guximin, bashkëpunimin dhe përgjegjësinë. Çdo fragment dhe dialog i librit ka një mesazh që lë gjurmë, duke formuar karakterin dhe mësimet morale te lexuesi.
+<br>1. “Shihni, aty poshtë ka një hyrje të fshehtë! Ndoshta është shpella e piratëve!” (Genci)
+<br>Domethënia: Kur guxojmë të eksplorojmë të panjohurën, mësojmë të kemi kurajo dhe kureshtje. 
+<br>2. “Mbajeni njëri-tjetrin! Vetëm së bashku mund të arrijmë në fund.” (Arben)
+<br>Domethënia: Bashkëpunimi është çelësi për të përballuar sfidat. Ky mësim mbetet gjatë gjithë jetës dhe formon marrëdhënie të forta.
+<br>3. “Nuk e di nëse dua të vazhdoj… gjithçka duket kaq e errët!” (Luli)
+<br>Domethënia: Përballja me frikën e ndihmon njeriun të rritet dhe të mësojë të mos dorëzohet.                                                                                                                                                                                     
+<br>4. “Kjo është harta e vjetër e piratëve! Duhet ta ndjekim çdo gjurmë.” (Genci)
+<br>Domethënia: Njohja dhe interpretimi i informacionit kërkon vëmendje dhe vendosmëri. 
+<br>5. “Ja ku është! Thesari i piratëve!” (Luli)
+
+        </p>
+
+        <!-- PJESA E FSHEHUR -->
+        <div class="full-analysis">
+          <p>
+
+<br>Domethënia: Përpjekja dhe këmbëngulja shpërblehen. Ky fragment nxit durim dhe këmbëngulje për të arritur qëllimet.
+<br>6.“Nëse nuk do kishim lexuar mirë hartenë, mund të kishim humbur.” (Genci)
+<br>Domethënia: Gabimet janë pjesë e mësimit. Reflektimi mbi to i bën fëmijët më të kujdesshëm dhe më të mençur.
+<br>7.“Mos e lër Lulin pas, edhe pse ecim ngadalë.” (Arben)
+<br>Domethënia: Kujdesi për të tjerët dhe solidariteti krijojnë besim dhe lidhje të forta në grup.
+<br>8. “Nuk ka rëndësi sa e vështirë duket, duhet të vazhdojmë.” (Genci)
+<br>Domethënia: Kurajo dhe vendosmëri janë mësime që mbeten gjatë jetës dhe ndihmojnë për të përballuar çdo sfidë.
+<br>9. “Edhe pse u trembëm, jemi më të fortë së bashku!” (Arben)
+<br>Domethënia: Sfida forcon bashkëpunimin dhe miqësinë. Fjala nxit unitet dhe besim tek grupi.
+
+          </p>
+        </div>
+
+        <span class="read-more">Lexo analizën →</span>
+      </div>
+
+
+      <div class="analysis-card">
+        <h3>HYRJE MBI LIBRIN ZEMRA -> EDMOND DE AMIÇES</h3>
+
+        <p class="preview">
+<br>Libri “Zemra” i Edmondo de Amiçis është një tregim i veçantë për fëmijët, i ndërtuar si një ditar që tregon jetën e vogëlushit Enrik dhe përvojat e tij në shkollë dhe në familje. Përmes ngjarjeve të përditshme, libri përcjell vlera morale dhe emocionale: përgjegjësinë ndaj familjes, respektin ndaj të tjerëve, besnikërinë në miqësi, durimin dhe trimërinë ku pati një sukses të padiskutueshëm.
+<br>Çdo fjali dhe fragment ka një mesazh që lë gjurmë, duke formuar karakterin e fëmijëve dhe duke i mësuar të jenë njerëz të mirë dhe të përgjegjshëm. “Zemra” nuk është vetëm një histori për fëmijët, por një udhërrëfyes i jetës dhe vlerave humane.
+<br> FRAGMENTE QË LËNË GJURMË
+<br>Familja dhe përgjegjësia
+<br>1. “Mos e turpëro kurrë emrin e familjes sate me sjelljen tënde.” (Babai)
+<br>Domethënia: Kjo fjalë i mëson fëmijës përgjegjësinë dhe respektin ndaj familjes. Fjala mbetet gjatë gjithë jetës.
+<br>2. “Mos u mburr për atë që je, por puno për t’u bërë më i mirë.” (Babai)
+<br>Domethënia: Babai tregon rëndësinë e përmirësimit të vetvetes dhe përulësisë. Fjala formon karakter dhe ndërgjegje.
+<br>3. “Çdo gabim që nuk korrigjohet lë shenjë në shpirt.” (Babai)
+<br>Domethënia: Babai mëson reflektimin dhe përgjegjësinë. Një mësim i fuqishëm moral.
+<br>4. “Fjalët e hidhura lëndojnë më shumë se një shuplakë.” (Babai)
+<br>Domethënia: Babai tregon rëndësinë e fjalës së kujdesshme. Fjala lë gjurmë në shpirt dhe marrëdhënie.
+<br>5. “Respekto të tjerët, sepse respekti kthehet gjithmonë.” (Babai)
+<br>Domethënia: Babai mëson respektin e ndërsjellë. Fjala ndikon në marrëdhënie dhe sjellje.
+<br>6. “Kur gabon, njohja e gabimit është më e rëndësishme se justifikimi.” (Babai)
+<br>Domethënia: Babai nxit përgjegjësinë dhe reflektimin. Një mësim që formon karakterin.
+<br> Mësuesi dhe edukimi moral
+
+<br>1. “Shkolla nuk është vetëm për të mësuar, por për t’u bërë njerëz të mirë.” (Mësuesi)
+<br>Domethënia: Mësuesi tregon rëndësinë e edukimit moral, jo vetëm të dijes. Fjala lë gjurmë në formimin e karakterit.
+<br>2. “Dija është dritë që nuk shuhet kurrë.” (Mësuesi)
+<br>Domethënia: Mësuesi nxit dashurinë për dijen dhe vetëdijesimin. Fjala frymëzon rritje dhe dituri.
+<br>3. “Durimi dhe këmbëngulja sjellin suksesin.” (Mësuesi)
+<br>Domethënia: Mësuesi mëson se durimi është çelësi i rritjes. Fjala mbetet udhërrëfyes në sfida.
+<br>4. “Mos u tremb të bësh atë që është e drejtë, edhe kur askush nuk të sheh.” (Mësuesi)
+<br>Domethënia: Mësuesi mëson trimërinë morale. Fjala lë gjurmë në karakter.
+<br>5. “Para se të flasësh, mendo se si ndihen të tjerët.” (Mësuesi)
+<br>Domethënia: Mësuesi tregon rëndësinë e empatisë. Fjala formon respekt dhe ndjeshmëri.
+<br>6. “Duro, sepse gjithçka ka kohën e vet.” (Mësuesi)
+<br>Domethënia: Mësuesi mëson durimin dhe pritjen e rezultateve. Një mësim i fuqishëm për jetën.
+<br>7. “Bashkëpunimi dhe respekti ndaj shokëve e bëjnë çdo punë më të lehtë.” (Mësuesi / Derosi)
+<br>Domethënia: Mësuesi mëson rëndësinë e punës në grup dhe respektit. Fjala ndikon në marrëdhënie dhe etikën e punës.
+<br>8. “Pas çdo vështirësie vjen një ditë më e mirë.” (Mësuesi)
+<br>Domethënia: Mësuesi mëson optimizmin dhe shpresën. Një mesazh që mbetet gjatë jetës. 
+<br>Shokët dhe miqësia
+<br>1. “Një mik i mirë nuk të braktis në vështirësi.” (Garrone)
+<br>Domethënia: Garrone tregon rëndësinë e besnikërisë. Fjala ndërton lidhje të forta.
+<br>2. “Një mik i vërtetë është ai që ndihmon kur askush tjetër nuk e bën.” (Garrone)
+<br>Domethënia: Garrone mëson solidaritetin dhe ndihmën. Fjala lë gjurmë në besim dhe marrëdhënie.
+<br>3. “Mos e tradhto shokun tënd për asgjë.” (Garrone)
+<br>Domethënia: Garrone tregon rëndësinë e besnikërisë. Një mësim për marrëdhënie të sigurta.
+<br>4. “Mos i tall dobësitë e shokut.” (Garrone / Neli)
+<br>Domethënia: Garrone dhe Neli mësojnë respektin dhe ndjeshmërinë. Fjala lë gjurmë në marrëdhënie shoqërore.
+<br>5. “Shokët e mirë janë thesari më i madh.” (Garrone)
+<br>Domethënia: Vlerësimi i miqësisë si pasuri e vërtetë. Një fjali që frymëzon kujdes dhe bashkëpunim.
+<br>6. “Mos i lër shokët kur kanë nevojë për ty.” (Garrone)
+<br>Domethënia: Besnikëria provohet në vështirësi. Fjala ndërton marrëdhënie të forta.
+<br>7. “Bashkëpunimi dhe besimi bëjnë çdo punë më të lehtë.” (Derosi)
+<br>Domethënia: Derosi mëson rëndësinë e besimit në shokë. Një mësim që mbetet gjatë jetës.
+<br>8. “Edhe kur frika të mbyt, bëj atë që e di se është e drejtë.” (Enriko Botini)
+<br>Domethënia: Enriko mëson trimërinë morale dhe përgjegjësinë. Fjala e tij lë gjurmë tek karakteri i fëmijëve.
+<br>9. “Çdo përpjekje, madhe apo e vogël, të bën më të fortë.” (Enriko Botini)
+<br>Domethënia: Enriko tregon se këmbëngulja e përditshme ka vlerë. Fjala frymëzon durim dhe vetëbesim.
+<br>10. “Bëj mirë edhe kur askush nuk e sheh.” (Garrone)
+<br>Domethënia: Fuqia e mirësisë së heshtur. Një mesazh që formon karakterin tënd.
+<br>Personazhe që lënë gjurmë…
+<br> Enriko ->  I ndjeshëm, i drejtë, i sinqertë, reflektues, empatik, i përgjegjshëm.
+
+        </p>
+
+        <!-- PJESA E FSHEHUR -->
+        <div class="full-analysis">
+          <p>
+
+<br>Mesazhi: Të jesh i mirë dhe i ndershëm është forca më e madhe. Të reflektosh mbi veprimet e tua të bën njeri më të mirë.
+<br> Mësuesi ->  I drejtë, i përkushtuar, i duruar, i dashur, edukues, autoritar pozitiv.
+<br>Mesazhi: Mësuesi formon si mendjen, ashtu edhe karakterin. Drejtësia dhe përkushtimi fitojnë respekt.
+<br> Garrone ->  I fortë, zemërmirë, i guximshëm, mbrojtës, i drejtë, besnik.
+<br>Mesazhi: Forca e vërtetë qëndron në mbrojtjen e të dobëtit. Mirësia është shenjë force.
+<br>Derosi -> Ozgjuar, punëtor, i disiplinuar, i përkushtuar, i përulur, shembullor.
+<br>Mesazhi: Suksesi arrihet me punë dhe përkushtim. Dija duhet të shoqërohet me përulësi.
+<br> Koreti ->  Punëtor, i ndershëm, i përgjegjshëm, këmbëngulës, i thjeshtë, i fortë shpirtërisht.
+<br>Mesazhi: Puna është vlerë dhe dinjitet. Sakrifica të bën më të fortë.
+<br> Prekosi ->  I turpshëm, i ndjeshëm, i duruar, i mirë, i përvuajtur, i përkushtuar.
+<br>Mesazhi: Mos gjyko nga pamja apo gjendja. Edhe në vështirësi mund të mbetesh i mirë.
+<br> Neli ->  I ndjeshëm, i pasigurt, i mirë, i qetë, i turpshëm, i brishtë.
+<br>Mesazhi: Duhet të tregojmë empati dhe mirësi.Dobësia fizike nuk përcakton vlerën e njeriut. 
+<br>Franti  -> I pabindur, i ashpër, i pandjeshëm, rebel, provokues, negativ.
+<br>Mesazhi: Sjellja e keqe të çon në izolim. Mungesa e vlerave dëmton veten dhe të tjerët.
+<br> Stardi  ->    Këmbëngulës, punëtor, i disiplinuar, i vendosur, serioz, i palodhur.
+<br>Mesazhi: Me vullnet arrihet gjithçka. Përpjekja është çelësi i suksesit.
+
+
+
+          </p>
+        </div>
+
+        <span class="read-more">Lexo analizën →</span>
+      
+  </section>
+
+</body>
+<script>
+  document.querySelectorAll(".read-more").forEach(button => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".analysis-card");
+      card.classList.toggle("expanded");
+
+      button.textContent = card.classList.contains("expanded")
+        ? "Mbyll analizën ←"
+        : "Lexo analizën →";
+    });
+  });
+</script>
+</html>
