@@ -1,7 +1,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body {
   font-family: Inter, sans-serif;
-  color: #f5d9a6;
+  color: #e8c98b;
 
   background:
     linear-gradient(rgba(91, 76, 49, 0.578), rgba(91, 76, 49, 0.578)),
@@ -56,7 +56,7 @@ nav a:hover{opacity:1}
     margin-bottom:24px
 }
 .hero p{
-    font-size:28px;
+    font-size:100px;
     max-width:800px;
     margin-bottom:40px;
     opacity:.9

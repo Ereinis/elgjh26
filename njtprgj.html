@@ -85,16 +85,31 @@ nav a:hover{opacity:1}
   text-align:center;
   padding:120px 24px;
 }
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;        /* e bën më të largët nga teksti */
+}
 
+.chart-wrapper img {
+  width: 55%;              /* e bën më të vogël */
+  max-width: 700px;        /* nuk e bën shumë të madhe në desktop */
+  filter: brightness(1); /* e errëson imazhin */
+  border-radius: 12px;     /* e bën më bukur */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.749);
+}
 </style>
 
 <header>
-  <div class="logo">📖 PESHA E FJALËS</div>
+  <div class="logo">"Fjalë që lënë gjurmë..."</div>
   <nav>
     <a href="index.html">Kryefaqja</a>
     <a href="alv.html">Analizë veprash letrare</a>
     <a href="rstk.html">Multimedia</a>
+    <a href="rstkinter.html">Interaktive</a>
     <a href="njtprgj.html">Produkti</a>
+    <a href="fjala.html">Fjala e ditës</a>
   </nav>
 </header>
 
@@ -103,7 +118,39 @@ nav a:hover{opacity:1}
     <h1>PRODUKTI</h1>
   </div>
 
-  
+  <div class="chart-wrapper">
+    <img src="Fjalët që lejnë gjurmë..png" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="urti.png" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="shkallat/1.png" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="shkallat/2.jpeg" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="shkallat/3.jpeg" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="shkallat/4.jpeg" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="shkallat/5.jpeg" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="shkallat/6.jpeg" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="shkallat/7.jpeg" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="WhatsApp Image 2026-04-15 at 13.14.17.jpeg" alt="">
+  </div>
+  <div class="chart-wrapper">
+    <img src="WhatsApp Image 2026-04-15 at 13.14.17 (1).jpeg" alt="">
+  </div>
 </section>
 
 <div id="tmpLoading" style="width: 100%; height: 100%; position: absolute; z-index: -2;background:#323232;"></div>
